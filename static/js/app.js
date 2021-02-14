@@ -1,8 +1,8 @@
 // assgning the data from data.js to a variable
 let sightings = data;
 // establishing a reference to my table's body and input field
-let tableBody = d3.select("tbody")
-let input = d3.select("input")
+let tableBody = d3.select("tbody");
+let input = d3.select("input");
 
 // selecting my form and button so I can asasign handlers
 let filterButton = d3.select("#filter-btn");
@@ -33,7 +33,7 @@ function filterData() {
     d3.event.preventDefault();
 
     //Clearing my table
-    tableBody.html("")
+    tableBody.html("");
 
     // Selecting the input box
     let inputBox = d3.select("#datetime");
@@ -44,7 +44,7 @@ function filterData() {
     //Getting the filtered data from the input
     let filteredData = sightings.filter(sightings => sightings.datetime === clientInput);
 
-    console.log(filteredData)
+    console.log(filteredData);
 
     //making a new table with the filteredData
     filteredData.forEach(function(instance) {
@@ -58,8 +58,8 @@ function filterData() {
 
 function resetData() {
     //clearing my table and input field 
-    tableBody.html("")
-    input.html("")
+    tableBody.html("");
+    input.html("");
     //Rerunning the inital table
     init();
 
